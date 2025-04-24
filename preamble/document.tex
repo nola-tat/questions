@@ -23,15 +23,20 @@
 \usepackage{titlesec}
 \usepackage{titling}
 
+
 % Changes style of section title
 
-\titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{}
+\titleformat{\section}{\normalfont\Large\bfseries}{Question \thesection}{0em}{}
+% \titleformat{\subsection}{\normalfont\Large\bfseries}{Question \thesubsection}{0em}{}
 
 \setlength{\parskip}{10pt}
 \setlength{\parindent}{0pt}
 
-% Changing contents page title
+
+% Changing contents page 
+
 \renewcommand*{\contentsname}{Questions}
+
 
 % To do with question environment
 
@@ -40,6 +45,8 @@
 \newlength{\qspace}
 \setlength{\qspace}{15pt}
 
+% Question environment
+% Would like to try to get this to start a subsection called `Question qnumber'
 
 \newcounter{qnumber}
 \setcounter{qnumber}{0}
