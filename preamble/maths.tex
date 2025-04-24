@@ -1,4 +1,5 @@
 % LTeX: enabled=false
+% cSpell:disable
 
 \usepackage{cool}
 
@@ -11,7 +12,8 @@
 
 % Maths operators and definitions
 
-\def\d{\mathrm{d}}
+% This makes it use \mathrm{d} for differentiation and integration
+\Style{DSymb={\mathrm d},DShorten=true,IntegrateDifferentialDSymb=\mathrm{d}}
 
 \DeclareMathOperator{\cosec}{cosec}
 \DeclareMathOperator{\Var}{Var}
