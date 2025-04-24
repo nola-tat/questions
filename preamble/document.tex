@@ -1,49 +1,55 @@
 % LTeX: enabled=false
 % cSpell:disable
 
-\allowdisplaybreaks
 
-\usepackage{kantlipsum}
 % Coloured boxes for questions
+
 \usepackage[most]{tcolorbox}
+
 
 % Page size
 
 \usepackage{geometry}
 \geometry{a4paper, lmargin=2cm, rmargin=2.5cm, tmargin=3.5cm, bmargin=2.5cm}
-\usepackage{titling}
 
 % Paragraph spacing
 
 % \usepackage{parskip}
 % \setlength{\parindent}{3cm}
 
+
 % Headers
 
 \usepackage{titlesec}
 \usepackage{titling}
 
-\titleformat{\section}{\normalfont\large\bfseries}{}{0em}{}
+% Changes style of section title
 
+\titleformat{\section}{\normalfont\large\bfseries}{}{0em}{}
 
 \setlength{\parskip}{10pt}
 \setlength{\parindent}{0pt}
 
+
+% To do with question environment
+
+\usepackage{enumerate}
+
 \newlength{\qspace}
-\setlength{\qspace}{20pt}
+\setlength{\qspace}{15pt}
 
 
 \newcounter{qnumber}
 \setcounter{qnumber}{0}
 
 \newenvironment{question}%
- {\vspace{\qspace}
+ {\begin{tcolorbox}\vspace{\qspace}
   \begin{enumerate}%
     \setcounter{enumi}{\value{qnumber}}%
     \item%
  }
 {
-  \end{enumerate}
+  \end{enumerate}\vspace{5pt}\end{tcolorbox}\vspace{1em}
   \filbreak
   \stepcounter{qnumber}
  }
@@ -61,7 +67,17 @@
   \end{enumerate}
  }
 
+%  Solution and solutionparts environments
+\newenvironment{solution}{\textit{Solution.}\vspace{1em}\\}{}
 
-
-\DeclareMathOperator{\cosec}{cosec}
-\DeclareMathOperator{\Var}{Var}
+\newenvironment{solutionparts}[1][1]%
+ {
+  \begin{enumerate}[(a)]%
+    \setcounter{enumii}{2}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
