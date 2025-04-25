@@ -26,7 +26,7 @@
 
 % Changes style of section title
 
-\titleformat{\section}{\normalfont\Large\bfseries}{Question \thesection}{0em}{}
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{}
 % \titleformat{\subsection}{\normalfont\Large\bfseries}{Question \thesubsection}{0em}{}
 
 \setlength{\parskip}{10pt}
@@ -49,12 +49,12 @@
 % Would like to try to get this to start a subsection called `Question qnumber'
 
 \newcounter{qnumber}
-\setcounter{qnumber}{0}
+\setcounter{qnumber}{1}
 
 \newenvironment{question}%
  {\begin{tcolorbox}\vspace{\qspace}
   \begin{enumerate}%
-    \setcounter{enumi}{\value{qnumber}}%
+    \setcounter{enumi}{ \the\numexpr\value{qnumber}-1\relax}%
     \item%
  }
 {
@@ -90,3 +90,5 @@
  {
   \end{enumerate}
  }
+
+\newcommand{\newq}{\section{Question \theqnumber}}
