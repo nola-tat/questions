@@ -22,8 +22,15 @@
 
 \usepackage{titlesec}
 \usepackage{titling}
+\usepackage{titletoc}
 
+\usepackage{tocloft}
 
+% \setlength{\cftsecindent}{0pt}
+\setlength{\cftsubsecindent}{0pt}
+% \renewcommand\cftsecafterpnum{\vskip30pt}
+\setlength{\cftbeforesecskip}{10pt}
+\renewcommand\numberline[1]{}
 % Changes style of section title
 
 \titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{}
@@ -36,6 +43,7 @@
 % Changing contents page 
 
 \renewcommand*{\contentsname}{Questions}
+\dottedcontents{section}[0em]{\normalfont\large}{50em}{1pc}
 
 
 % To do with question environment

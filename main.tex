@@ -6,12 +6,7 @@
 
 % \renewcommand{\thesubsection}{}
 
-\usepackage{tocloft}
 
-% \setlength{\cftsecindent}{0pt}
-\setlength{\cftsubsecindent}{0pt}
-
-\renewcommand\numberline[1]{}
 
 
 % Would like the question environment to start a section 
@@ -27,65 +22,9 @@
     \newpage
     \pagenumbering{arabic}
 
+    \input{questions/01.tex}
 
-    \newq
+    \input{questions/02.tex}
 
-        \begin{question}
-            A polar curve is defined as \[ r = a \theta, ~~ 0 \leq \theta \leq 2 \pi,  \] where \(a \) is a positive constant. 
-
-            Find the area bounded by the curve and the initial line.
-        \end{question}
-
-        \begin{solution}
-            \begin{align*}
-                \text{Area} &= \frac{1}{2} \int_{0}^{2\pi} (a \theta)^2 \mathrm{d } \theta \\
-                &= \frac{a^2}{2}\Int{\theta^2 }{\theta, 0, 2\pi} \\ 
-                &= \frac{a^2}{2} \left[\frac{1}{3} \theta^3\right]_0^{2\pi} \\
-                &= \frac{4 \pi^3 a^2}{3}
-            \end{align*}
-
-            Which is the final answer.
-
-        \end{solution}
-
-
-        
-    \section{Question 2}
-
-        \begin{question}
-            The function \(f(x) \) is defined as \[ f(x) = \frac{4x}{1 - x^4}. \]
-
-            \begin{questionparts}
-                \item Express \(f(x) \) into partial fractions. 
-                \item Hence find, as a single natural logarithm, the value of \[ \int_{0}^{\frac{1}{2}} f(x)~ \mathrm{d } x. \]
-            \end{questionparts}
-            
-        \end{question}
-
-        \begin{solution}
-            Part (a) will be useful for part (b). 
-
-            \begin{solutionparts}
-                \item Suppose \(f(x) \) can be written as partial fractions i.e. 
-                \[ \frac{4x}{1-x^4} = \frac{Ax }{1 -x^2} + \frac{Bx }{1 + x^2},  \] where \(A, B \in \mathbb{R }\). 
-                \begin{align*}
-                    \implies 4x &= Ax(1+x^2) + Bx(1-x^2) \\
-                    &= (A-B)x^3 + (A+B)x \\
-                    \implies A - B = 0 ~~&\text{and}~~ A+B = 4 \\
-                    \implies A = ~&B = 2 \\
-                    \therefore f(x) &= \frac{2x}{1 - x^2} + \frac{2x}{1 + x^2}
-                \end{align*}
-
-                \item We can write \(f(x) \) using the partial fractions we found.
-                
-                \begin{align*}
-                    \int_{0}^{\frac{1}{2}} f(x) ~ \mathrm{d} x  &= \int_{0}^{\frac{1}{2}} \frac{2x}{1 - x^2} + \frac{2x}{1 + x^2} ~ \mathrm{d} x \\
-                    &= \left[ - \ln \left| 1 - x^2 \right| + \ln \left|1 + x^2 \right|\right]_0^\frac{1}{2} \\
-                    &= \ln \left| \frac{1+ \left(\frac{1}{2}\right)^2}{1 - \left(\frac{1}{2}\right)^2}\right| \\
-                    &= \ln \frac{5}{3}.
-                \end{align*}
-                Which is the final answer. 
-            \end{solutionparts}
-        \end{solution}
 
 \end{document}
