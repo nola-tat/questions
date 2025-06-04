@@ -102,12 +102,36 @@
   \end{enumerate}
 }
 
+\newenvironment{questionsubparts}[1][1]%
+{
+  \begin{enumerate}[\bfseries (a)]%
+    \setcounter{enumiii}{#1}
+    \addtocounter{enumiii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+}
+{
+  \end{enumerate}
+}
+
 %  Solution and solutionparts environments
 \newenvironment{solution}{\textbf{Solution}\vspace{1em}\\}{}
 
 \newenvironment{solutionparts}[1][1]%
 {
   \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{2}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+}
+{
+  \end{enumerate}
+}
+
+\newenvironment{solutionsubparts}[1][1]%
+{
+  \begin{enumerate}[\bfseries (a)]%
     \setcounter{enumii}{2}
     \addtocounter{enumii}{-1}
     \setlength{\itemsep}{5mm}
