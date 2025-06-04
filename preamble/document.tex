@@ -42,8 +42,8 @@
 
 % Changing contents page 
 
-\renewcommand*{\contentsname}{Questions}
-\dottedcontents{section}[0em]{\normalfont\large}{50em}{1pc}
+\renewcommand*{\contentsname}{\LARGE Questions}
+\dottedcontents{section}[0em]{\normalfont\Large}{50em}{1pc}
 
 
 % To do with question environment
@@ -59,17 +59,32 @@
 \newcounter{qnumber}
 \setcounter{qnumber}{1}
 
+
+% Question environment with the qnumber. at the beginning 
+
+% \newenvironment{question}%
+%  {\begin{tcolorbox}\vspace{\qspace}
+%   \begin{enumerate}%
+%     \setcounter{enumi}{ \the\numexpr\value{qnumber}-1\relax}%
+%     \item%
+%  }
+% {
+%   \end{enumerate}\vspace{5pt}\end{tcolorbox}\vspace{1em}
+%   \filbreak
+%   \stepcounter{qnumber}
+% }
+
+% Question environment without the qnumber. at the beginning (not necessary because its in the section title)
+% Uncomment above if you want that 
+
 \newenvironment{question}%
  {\begin{tcolorbox}\vspace{\qspace}
-  \begin{enumerate}%
-    \setcounter{enumi}{ \the\numexpr\value{qnumber}-1\relax}%
-    \item%
  }
 {
-  \end{enumerate}\vspace{5pt}\end{tcolorbox}\vspace{1em}
+  \vspace{5pt}\end{tcolorbox}\vspace{1em}
   \filbreak
   \stepcounter{qnumber}
- }
+}
 
 
 \newenvironment{questionparts}[1][1]%
