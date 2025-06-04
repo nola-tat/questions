@@ -59,6 +59,8 @@
 \newcounter{qnumber}
 \setcounter{qnumber}{1}
 
+\newcommand{\newq}{\newpage\section{Question \theqnumber}}
+
 
 % Question environment with the qnumber. at the beginning 
 
@@ -78,8 +80,8 @@
 % Uncomment above if you want that 
 
 \newenvironment{question}%
- {\begin{tcolorbox}\vspace{\qspace}
- }
+{\newq\begin{tcolorbox}\vspace{\qspace}
+}
 {
   \vspace{5pt}\end{tcolorbox}\vspace{1em}
   \filbreak
@@ -88,30 +90,28 @@
 
 
 \newenvironment{questionparts}[1][1]%
- {
+{
   \begin{enumerate}%
     \setcounter{enumii}{#1}
     \addtocounter{enumii}{-1}
     \setlength{\itemsep}{5mm}
     \setlength{\parskip}{8pt}
- }
- {
+}
+{
   \end{enumerate}
- }
+}
 
 %  Solution and solutionparts environments
 \newenvironment{solution}{\textit{Solution.}\vspace{1em}\\}{}
 
 \newenvironment{solutionparts}[1][1]%
- {
+{
   \begin{enumerate}[(a)]%
     \setcounter{enumii}{2}
     \addtocounter{enumii}{-1}
     \setlength{\itemsep}{5mm}
     \setlength{\parskip}{8pt}
- }
- {
+}
+{
   \end{enumerate}
- }
-
-\newcommand{\newq}{\newpage\section{Question \theqnumber}}
+}
