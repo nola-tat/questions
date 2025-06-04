@@ -1,14 +1,17 @@
 % Question 4
 
+% For now, have separate environments for question parts and question subparts (the next level) 
+% Ideally would somehow implement it into a single "questionparts". I would just like the enumerate counter bold lol . 
+
 \begin{question}
     This is the stem of a question.
 
     \begin{questionparts}
-        \item This is part (a) of a question.
-        \item This is part (b) 
-        \begin{enumerate}
-            \item This is part (i) of part (b)
-        \end{enumerate}
+        \item This is part \textbf{(i)} of a question.
+        \item This is part \textbf{(ii)}
+        \begin{questionsubparts}
+            \item This is part \textbf{(a)} of \textbf{(ii)}
+        \end{questionsubparts}
     \end{questionparts}
 
 \end{question}
