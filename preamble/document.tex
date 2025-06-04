@@ -80,10 +80,10 @@
 % Uncomment above if you want that 
 
 \newenvironment{question}%
-{\newq\begin{tcolorbox}\vspace{\qspace}
+{\newq\begin{tcolorbox}[boxsep=\qspace]
 }
 {
-  \vspace{5pt}\end{tcolorbox}\vspace{1em}
+  \end{tcolorbox}\vspace{1em}
   \filbreak
   \stepcounter{qnumber}
 }
