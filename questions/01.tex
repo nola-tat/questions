@@ -1,19 +1,21 @@
 % Question 1
 
 \begin{question}
-    A polar curve is defined as \[ r = a \theta, ~~ 0 \leq \theta \leq 2 \pi,  \] where \(a \) is a positive constant. 
-
-    Find the area bounded by the curve and the initial line. \pts{7}
+    By considering \((r+1)^{3} - r^3\), derive the formula \(\sum_{r=1}^{n } r^2 = \frac{1}{6}n(n+1)(2n+1)\).
 \end{question}
 
 \begin{solution}
+    Consider
     \begin{align*}
-        \text{Area} &= \frac{1}{2} \Int{(a \theta)^2}{\theta, 0, 2\pi}  \\
-        &= \frac{a^2}{2}\Int{\theta^2 }{\theta, 0, 2\pi} \\ 
-        &= \frac{a^2}{2} \left[\frac{1}{3} \theta^3\right]_0^{2\pi} \\
-        &= \frac{4 \pi^3 a^2}{3}
+        (r+1)^{3} - r^3 &= r^3 + 3r^2 + 3r + 1 - r^3 \\
+        &= 3r^2 + 3r + 1 \\
+        \implies \sum_{r=1}^{n } \left[ (r+1)^{3} - r^3 \right] &= \sum_{r=1}^{n } \left[ 3r^2 + 3r + 1\right] \\
+        \implies (n+1)^{3} - 1 &= \frac{3n (n+1)}{2}  + n + 3 \sum_{r=1}^{n } r^2 \\
+        \implies 3 \sum_{r=1}^{n } r^2 &= n^3 + 3n^2 + 3n - \frac{3}{2} n^2 - \frac{3}{2}n - n \\
+        &= n^3 + \frac{3}{2} n^2 + \frac{1}{2} n \\
+        &= \frac{1}{2}n (2n^2 + 3n + 1) \\
+        &= \frac{1}{2}n (2n+1)(n+1) \\
+        \implies \sum_{r=1}^{n } r^2 &= \frac{1}{6} n(n+1)(2n+1 ) \qed
     \end{align*}
-
-    Which is the final answer.
 
 \end{solution}
