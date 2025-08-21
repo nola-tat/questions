@@ -33,8 +33,9 @@
 \renewcommand\numberline[1]{}
 % Changes style of section title
 
-\titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{}
+\titleformat{\section}{\normalfont\large\bfseries}{}{0em}{}
 % \titleformat{\subsection}{\normalfont\Large\bfseries}{Question \thesubsection}{0em}{}
+
 
 \setlength{\parskip}{10pt}
 \setlength{\parindent}{0pt}
@@ -60,7 +61,7 @@
 \newcounter{qnumber}
 \setcounter{qnumber}{1}
 
-\newcommand{\newq}{\newpage\section{Question \theqnumber}}
+\newcommand{\newq}{\section[Problem \theqnumber]{}}
 
 
 % Question environment with the qnumber. at the beginning 
@@ -81,11 +82,10 @@
 % Uncomment above if you want that 
 
 \newenvironment{question}%
-{\newq\begin{tcolorbox}[boxsep=\qspace]
+{\newq\begin{tcolorbox}[title=Problem \theqnumber]
 }
 {
   \end{tcolorbox}\vspace{1em}
-  \filbreak
   \stepcounter{qnumber}
 }
 
